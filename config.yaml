@@ -1,0 +1,21 @@
+gethurl: "wss://xxxxxxxxxxxx/"
+
+ssl:
+  crt: "xx.crt"
+  key: "xx.key"
+  port: 9001
+
+server:
+  addr: "0.0.0.0"
+  port: 9000
+
+mysql:
+  # 用户名:密码@tcp(IP地址:端口)/数据库名?其他参数
+  connect: "root:password@tcp(localhost:3306)/databasename?charset=utf8mb4&parseTime=True&loc=Local"
+  tableprefix: "t_"
+
+sec:
+  #以太币账户私钥
+  ethkey: "xxxxxxxxxxxxxxxx"
+  #归集钱包地址
+  wallet: "0xxxxxxxxxxxxx"

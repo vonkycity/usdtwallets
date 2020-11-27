@@ -1,0 +1,8 @@
+logs
+*.logsbuild
+*.log
+.DS_Store
+*/.DS_Store
+build
+*.key
+*.crt
