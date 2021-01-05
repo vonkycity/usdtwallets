@@ -23,6 +23,17 @@ time是时间戳
 price是价格
 sign签名，算法   md5(appid + gid + price + 订单号 + time + appKey)
 callbackurl 回调地址，如果使用get传入参数，一定要两次urlencode
+
+其他接口请自己查看MainRouter.go:
+router.GET("/payorder/:sdorderno/:appid/:gid/:t/:price/:sign/:callbackurl", orderController.WebGenOrder)
+router.POST("/payorder", orderController.WebGenOrder)
+router.GET("/orderstatus/:sdorderno/:appid/:t/:sign", orderController.WebOrderStatus)
+router.POST("/orderstatus", orderController.WebOrderStatus)
+router.GET("/admin/collectmoney/:wallet/:accesstoken", adminController.WebCollectMoney)
+router.POST("/admin/collectmoney", adminController.WebCollectMoney)
+router.GET("/admin/systemstatus/:accesstoken", adminController.WebSystemStatus)
+router.POST("/admin/systemstatus", adminController.WebSystemStatus)
+router.GET("/admin/walletlist/:page/:accesstoken", adminController.WebGetWalletList)
 ```
 
 ```
