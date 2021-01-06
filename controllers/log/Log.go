@@ -92,33 +92,7 @@ func UsdtEventRoutine() {
 					myutils.SafeWriteStringChannel(outOrderInfo.ReadChan, string(jsonBytes))
 				}
 				//log.Println(transferEvent.From.Hex())
-				/*
-					from := transferEvent.From.Hex()
-					if from == "0x57EA3A2D605d028b81Ce6aDaC145B71e744eC9fb" {
-						log.Println("收到了......xxxxxx------------")
-						log.Println(adminController.GetOrderMap().Load("0X57EA3A2D605D028B81CE6ADAC145B71E744EC9FB"))
-					}
-					//log.Println("map: ", adminController.GetOrderMap())
-					test, test2 := adminController.GetOrderMap().Load(strings.ToUpper(from))
-					if test2 {
-						ff := test.(adminController.OutOrderInfo)
-						log.Println(ff.Wallet)
-						log.Println("收到了......[[[[[[[[[[[[[[[[[[[[[[")
-					} else {
-						if from == "0x57EA3A2D605d028b81Ce6aDaC145B71e744eC9fb" {
-							log.Println("奇了怪了")
-							log.Println(from)
-							log.Println("map:::", adminController.GetOrderMap())
-							log.Println(adminController.GetOrderMap().Load("0X57EA3A2D605D028B81CE6ADAC145B71E744EC9FB"))
-							if strings.ToUpper(from) != "0X57EA3A2D605D028B81CE6ADAC145B71E744EC9FB" {
-								log.Println("更tmd奇了怪了")
-								log.Println(strings.ToUpper(from))
-								log.Println("0X57EA3A2D605D028B81CE6ADAC145B71E744EC9FB")
-								log.Println(from)
-							}
-						}
-					}
-				*/
+
 				loadV2, ok2 := adminController.GetOrderMap().Load(strings.ToUpper(transferEvent.From.Hex()))
 				if ok2 {
 					//log.Println("收到了......")
@@ -133,19 +107,7 @@ func UsdtEventRoutine() {
 					jsonBytes, _ := json.Marshal(resultAction)
 					myutils.SafeWriteStringChannel(outOrderInfo.ReadChan, string(jsonBytes))
 				}
-				/*
-					if strings.ToUpper(transferEvent.To.Hex()) == strings.ToUpper("0xf23c7c910dddfdf20e281e09f28f9555d1103253") {
-						log.Println("-----------------------------------")
-						log.Println("BlockNumber:", vLog.BlockNumber, "     TxHash:", vLog.TxHash.Hex())
-						log.Println("\tFrom:", transferEvent.From.Hex())
-						log.Println("\tTo:", transferEvent.To.Hex())
-						log.Println("\tTokens:", transferEvent.Tokens.String())
-						receipt, _ := client.TransactionReceipt(context.Background(), vLog.TxHash)
-						log.Println("\tStatus:", receipt.Status)
-					} else {
-						//log.Println("---")
-					}
-				*/
+
 			}
 		}
 	}
