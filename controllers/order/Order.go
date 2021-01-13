@@ -539,7 +539,7 @@ func createWallet() (bool, string, string) {
 	m := now.Format("01")
 	log.Println(myutils.GetCurrentPath() + "keystore/" + y + m)
 	ks := keystore.NewKeyStore(myutils.GetCurrentPath()+"/keystore/"+y+m, keystore.StandardScryptN, keystore.StandardScryptP)
-	password := "3jw9lketj"
+	password := config.GetConfig().Sec.Kspassword
 	account, err := ks.NewAccount(password)
 	if err != nil {
 		return false, "", ""
