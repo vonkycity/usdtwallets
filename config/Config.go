@@ -29,8 +29,9 @@ type MysqlConfig struct {
 
 //SecConfig struct
 type SecConfig struct {
-	Ethkey string `yaml:"ethkey"`
-	Wallet string `yaml:"wallet"`
+	Ethkey     string `yaml:"ethkey"`
+	Wallet     string `yaml:"wallet"`
+	Kspassword string `yaml:"kspassword"`
 }
 
 //MainConfig struct
