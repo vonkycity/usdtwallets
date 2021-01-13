@@ -15,6 +15,8 @@ mysql:
   tableprefix: "t_"
 
 sec:
+  #keystore 密码
+  kspassword: "pwd"
   #以太币账户私钥
   ethkey: "xxxxxxxxxxxxxxxx"
   #归集钱包地址
