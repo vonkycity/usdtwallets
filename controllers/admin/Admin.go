@@ -300,7 +300,7 @@ func transUsdtRoutine(wallet string, fee uint64, gasPrice *big.Int) {
 	if err := db.Where("address = ?", wallet).First(&w).Error; gorm.IsRecordNotFoundError(err) {
 		return
 	}
-	password := "3jw9lketj"
+	password := config.GetConfig().Sec.Kspassword
 	ksFile := myutils.GetCurrentPath() + w.File
 	keyjson, err := ioutil.ReadFile(ksFile)
 	key, err := keystore.DecryptKey(keyjson, password)
